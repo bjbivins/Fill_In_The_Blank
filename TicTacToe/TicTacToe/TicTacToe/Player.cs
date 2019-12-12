@@ -11,6 +11,11 @@ namespace TicTacToe
         private bool X_or_O;
         public bool X_or_O1 { get => X_or_O; set => X_or_O = value; }
 
+        public Player(bool xo)
+        {
+            X_or_O = xo;
+        }
+
         public override string ToString()
         {
             if (X_or_O == true)

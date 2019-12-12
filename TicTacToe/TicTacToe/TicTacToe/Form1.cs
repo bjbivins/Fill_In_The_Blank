@@ -31,10 +31,12 @@ namespace TicTacToe
               file.
         */
 
+        Player player1, player2;
 
         public frmTicTacToe()
         {
             InitializeComponent();
+
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,9 +74,52 @@ namespace TicTacToe
 
         }
 
+        public bool StartGame(bool playerID)
+        {
+            r1c1button.Enabled = true;
+            r1c2button.Enabled = true;
+            r1c3button.Enabled = true;
+            r2c1button.Enabled = true;
+            r2c2button.Enabled = true;
+            r2c3button.Enabled = true;
+            r3c1button.Enabled = true;
+            r3c2button.Enabled = true;
+            r3c3button.Enabled = true;
+            return playerID;
+        }
+
+        bool tempP = false;
+        bool tempC = false;
+        public void buildPlayer(bool playerID, bool colorID)
+        {
+            if ((tempP == true) && (tempC == true))
+            {
+
+            }
+
+            else
+            {
+                // MESSAGE BOX
+            }
+        }
+
+        private void blueToolStripMenuItem_DoubleClick(object sender, EventArgs e)
+        {
+            SelectColor(true);
+        }
+
+        public bool SelectColor(bool colorID)
+        {
+            // TRUE = BLUE
+            // FALSE = RED
+            return colorID;
+        }
+
         private void xToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            player1 = new Player(StartGame(true));
+            selectToolStripMenuItem.Enabled = false;
+            selectToolStripMenuItem.Visible = false;
         }
 
         private void oToolStripMenuItem_Click(object sender, EventArgs e)
@@ -126,6 +171,8 @@ namespace TicTacToe
         {
 
         }
+
+
 
         private void selectToolStripMenuItem_Click(object sender, EventArgs e)
         {

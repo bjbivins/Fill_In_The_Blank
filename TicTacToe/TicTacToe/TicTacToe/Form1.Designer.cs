@@ -132,11 +132,13 @@
             // 
             this.blueToolStripMenuItem.Checked = true;
             this.blueToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.blueToolStripMenuItem.DoubleClickEnabled = true;
             this.blueToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
             this.blueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.blueToolStripMenuItem.Text = "Blue";
             this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
+            this.blueToolStripMenuItem.DoubleClick += new System.EventHandler(this.blueToolStripMenuItem_DoubleClick);
             // 
             // redToolStripMenuItem
             // 
