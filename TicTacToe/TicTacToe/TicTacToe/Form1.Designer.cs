@@ -123,6 +123,7 @@
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.blueToolStripMenuItem,
             this.redToolStripMenuItem});
+            this.viewToolStripMenuItem.Enabled = false;
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.viewToolStripMenuItem.Text = "View";
