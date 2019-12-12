@@ -138,7 +138,6 @@
             this.blueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.blueToolStripMenuItem.Text = "Blue";
             this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
-            this.blueToolStripMenuItem.DoubleClick += new System.EventHandler(this.blueToolStripMenuItem_DoubleClick);
             // 
             // redToolStripMenuItem
             // 
@@ -190,11 +189,12 @@
             this.r1c1button.Enabled = false;
             this.r1c1button.ImageList = this.blueImages;
             this.r1c1button.Location = new System.Drawing.Point(6, 49);
-            this.r1c1button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.r1c1button.Margin = new System.Windows.Forms.Padding(2);
             this.r1c1button.Name = "r1c1button";
             this.r1c1button.Size = new System.Drawing.Size(75, 78);
             this.r1c1button.TabIndex = 1;
             this.r1c1button.UseVisualStyleBackColor = true;
+            this.r1c1button.TextChanged += new System.EventHandler(this.r1c1button_TextChanged);
             this.r1c1button.Click += new System.EventHandler(this.r1c1button_Click);
             // 
             // r1c2button
@@ -202,11 +202,12 @@
             this.r1c2button.Enabled = false;
             this.r1c2button.ImageList = this.blueImages;
             this.r1c2button.Location = new System.Drawing.Point(90, 49);
-            this.r1c2button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.r1c2button.Margin = new System.Windows.Forms.Padding(2);
             this.r1c2button.Name = "r1c2button";
             this.r1c2button.Size = new System.Drawing.Size(75, 78);
             this.r1c2button.TabIndex = 2;
             this.r1c2button.UseVisualStyleBackColor = true;
+            this.r1c2button.TextChanged += new System.EventHandler(this.r1c2button_TextChanged);
             this.r1c2button.Click += new System.EventHandler(this.r1c2button_Click);
             // 
             // r1c3button
@@ -214,11 +215,12 @@
             this.r1c3button.Enabled = false;
             this.r1c3button.ImageList = this.blueImages;
             this.r1c3button.Location = new System.Drawing.Point(172, 49);
-            this.r1c3button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.r1c3button.Margin = new System.Windows.Forms.Padding(2);
             this.r1c3button.Name = "r1c3button";
             this.r1c3button.Size = new System.Drawing.Size(75, 78);
             this.r1c3button.TabIndex = 3;
             this.r1c3button.UseVisualStyleBackColor = true;
+            this.r1c3button.TextChanged += new System.EventHandler(this.r1c3button_TextChanged);
             this.r1c3button.Click += new System.EventHandler(this.r1c3button_Click);
             // 
             // r2c1button
@@ -226,11 +228,12 @@
             this.r2c1button.Enabled = false;
             this.r2c1button.ImageList = this.blueImages;
             this.r2c1button.Location = new System.Drawing.Point(6, 135);
-            this.r2c1button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.r2c1button.Margin = new System.Windows.Forms.Padding(2);
             this.r2c1button.Name = "r2c1button";
             this.r2c1button.Size = new System.Drawing.Size(75, 78);
             this.r2c1button.TabIndex = 4;
             this.r2c1button.UseVisualStyleBackColor = true;
+            this.r2c1button.TextChanged += new System.EventHandler(this.r2c1button_TextChanged);
             this.r2c1button.Click += new System.EventHandler(this.r2c1button_Click);
             // 
             // r2c2button
@@ -238,11 +241,12 @@
             this.r2c2button.Enabled = false;
             this.r2c2button.ImageList = this.blueImages;
             this.r2c2button.Location = new System.Drawing.Point(90, 135);
-            this.r2c2button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.r2c2button.Margin = new System.Windows.Forms.Padding(2);
             this.r2c2button.Name = "r2c2button";
             this.r2c2button.Size = new System.Drawing.Size(75, 78);
             this.r2c2button.TabIndex = 5;
             this.r2c2button.UseVisualStyleBackColor = true;
+            this.r2c2button.TextChanged += new System.EventHandler(this.r2c2button_TextChanged);
             this.r2c2button.Click += new System.EventHandler(this.r2c2button_Click);
             // 
             // r2c3button
@@ -250,11 +254,12 @@
             this.r2c3button.Enabled = false;
             this.r2c3button.ImageList = this.blueImages;
             this.r2c3button.Location = new System.Drawing.Point(172, 135);
-            this.r2c3button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.r2c3button.Margin = new System.Windows.Forms.Padding(2);
             this.r2c3button.Name = "r2c3button";
             this.r2c3button.Size = new System.Drawing.Size(75, 78);
             this.r2c3button.TabIndex = 6;
             this.r2c3button.UseVisualStyleBackColor = true;
+            this.r2c3button.TextChanged += new System.EventHandler(this.r2c3button_TextChanged);
             this.r2c3button.Click += new System.EventHandler(this.r2c3button_Click);
             // 
             // r3c1button
@@ -262,11 +267,12 @@
             this.r3c1button.Enabled = false;
             this.r3c1button.ImageList = this.blueImages;
             this.r3c1button.Location = new System.Drawing.Point(6, 222);
-            this.r3c1button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.r3c1button.Margin = new System.Windows.Forms.Padding(2);
             this.r3c1button.Name = "r3c1button";
             this.r3c1button.Size = new System.Drawing.Size(75, 78);
             this.r3c1button.TabIndex = 7;
             this.r3c1button.UseVisualStyleBackColor = true;
+            this.r3c1button.TextChanged += new System.EventHandler(this.r3c1button_TextChanged);
             this.r3c1button.Click += new System.EventHandler(this.r3c1button_Click);
             // 
             // r3c2button
@@ -274,11 +280,12 @@
             this.r3c2button.Enabled = false;
             this.r3c2button.ImageList = this.blueImages;
             this.r3c2button.Location = new System.Drawing.Point(90, 222);
-            this.r3c2button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.r3c2button.Margin = new System.Windows.Forms.Padding(2);
             this.r3c2button.Name = "r3c2button";
             this.r3c2button.Size = new System.Drawing.Size(75, 78);
             this.r3c2button.TabIndex = 8;
             this.r3c2button.UseVisualStyleBackColor = true;
+            this.r3c2button.TextChanged += new System.EventHandler(this.r3c2button_TextChanged);
             this.r3c2button.Click += new System.EventHandler(this.r3c2button_Click);
             // 
             // r3c3button
@@ -286,11 +293,12 @@
             this.r3c3button.Enabled = false;
             this.r3c3button.ImageList = this.blueImages;
             this.r3c3button.Location = new System.Drawing.Point(172, 222);
-            this.r3c3button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.r3c3button.Margin = new System.Windows.Forms.Padding(2);
             this.r3c3button.Name = "r3c3button";
             this.r3c3button.Size = new System.Drawing.Size(75, 78);
             this.r3c3button.TabIndex = 9;
             this.r3c3button.UseVisualStyleBackColor = true;
+            this.r3c3button.TextChanged += new System.EventHandler(this.r3c3button_TextChanged);
             this.r3c3button.Click += new System.EventHandler(this.r3c3button_Click);
             // 
             // toolStrip1
@@ -300,7 +308,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
             this.toolStrip1.Size = new System.Drawing.Size(259, 25);
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
@@ -314,6 +322,7 @@
             this.toolStripButton1.RightToLeftAutoMirrorImage = true;
             this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
             this.toolStripButton1.Text = "New Game";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // label1
             // 
@@ -377,7 +386,7 @@
             this.Controls.Add(this.r1c1button);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmTicTacToe";
             this.Text = "Tic Tac Toe";
             this.menuStrip1.ResumeLayout(false);
