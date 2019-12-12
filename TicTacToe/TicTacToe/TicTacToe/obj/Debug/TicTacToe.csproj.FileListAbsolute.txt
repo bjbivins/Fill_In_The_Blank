@@ -7,3 +7,13 @@ c:\users\lee lewis\documents\visual studio 2017\Projects\TicTacToe\TicTacToe\obj
 c:\users\lee lewis\documents\visual studio 2017\Projects\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csproj.GenerateResource.Cache
 c:\users\lee lewis\documents\visual studio 2017\Projects\TicTacToe\TicTacToe\obj\Debug\TicTacToe.exe
 c:\users\lee lewis\documents\visual studio 2017\Projects\TicTacToe\TicTacToe\obj\Debug\TicTacToe.pdb
+C:\Users\Braxton\Desktop\Code Assignment 3 Repo\Fill_In_The_Blank\TicTacToe\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csprojAssemblyReference.cache
+C:\Users\Braxton\Desktop\Code Assignment 3 Repo\Fill_In_The_Blank\TicTacToe\TicTacToe\TicTacToe\obj\Debug\TicTacToe.exe
+C:\Users\Braxton\Desktop\Code Assignment 3 Repo\Fill_In_The_Blank\TicTacToe\TicTacToe\TicTacToe\obj\Debug\TicTacToe.pdb
+C:\Users\Braxton\Desktop\Code Assignment 3 Repo\Fill_In_The_Blank\TicTacToe\TicTacToe\TicTacToe\bin\Debug\TicTacToe.exe.config
+C:\Users\Braxton\Desktop\Code Assignment 3 Repo\Fill_In_The_Blank\TicTacToe\TicTacToe\TicTacToe\bin\Debug\TicTacToe.exe
+C:\Users\Braxton\Desktop\Code Assignment 3 Repo\Fill_In_The_Blank\TicTacToe\TicTacToe\TicTacToe\bin\Debug\TicTacToe.pdb
+C:\Users\Braxton\Desktop\Code Assignment 3 Repo\Fill_In_The_Blank\TicTacToe\TicTacToe\TicTacToe\obj\Debug\TicTacToe.frmTicTacToe.resources
+C:\Users\Braxton\Desktop\Code Assignment 3 Repo\Fill_In_The_Blank\TicTacToe\TicTacToe\TicTacToe\obj\Debug\TicTacToe.Properties.Resources.resources
+C:\Users\Braxton\Desktop\Code Assignment 3 Repo\Fill_In_The_Blank\TicTacToe\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csproj.GenerateResource.cache
+C:\Users\Braxton\Desktop\Code Assignment 3 Repo\Fill_In_The_Blank\TicTacToe\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csproj.CoreCompileInputs.cache
