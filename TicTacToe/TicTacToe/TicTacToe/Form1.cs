@@ -55,8 +55,23 @@ namespace TicTacToe
 
         private void saveGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            XmlTextWriter textWriter = new XmlTextWriter("C:\\XMLfile.xml", null);
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "XML Files (*.xml)|*.xml";
+
+            if (dlg.ShowDialog() != DialogResult.OK)
+            {
+                //return null;
+            }
+
+            XmlTextWriter textWriter = new XmlTextWriter(dlg.FileName, null);
             textWriter.WriteStartDocument();
+
+            textWriter.WriteComment("Sample Comment");
+            textWriter.WriteStartElement("Player1");
+            textWriter.WriteStartElement("true");
+
+
+
             textWriter.WriteEndDocument();
             textWriter.Close();
         }
