@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace TicTacToe
 {
@@ -36,11 +37,9 @@ namespace TicTacToe
         // X = TRUE, O = FALSE
         bool PlayerTurn = true;  // X goes First
 
-
         public frmTicTacToe()
         {
             InitializeComponent();
-
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,10 +49,20 @@ namespace TicTacToe
 
         private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            XmlTextReader textReader = new XmlTextReader("C:\\XMLfile.xml");
 
         }
 
         private void saveGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            XmlTextWriter textWriter = new XmlTextWriter("C:\\XMLfile.xml", null);
+            textWriter.WriteStartDocument();
+            textWriter.WriteEndDocument();
+            textWriter.Close();
+        }
+
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -61,11 +70,6 @@ namespace TicTacToe
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void blueToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,53 +124,52 @@ namespace TicTacToe
 
         private void redToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             blueToolStripMenuItem.Checked = false;
             redToolStripMenuItem.Checked = true;
 
             if (r1c1button.Text == "X" || r1c1button.Text == "O")
             {
-                r1c1button.ImageList = blueImages;
+                r1c1button.ImageList = redImages;
             }
 
             if (r1c2button.Text == "X" || r1c2button.Text == "O")
             {
-                r1c2button.ImageList = blueImages;
+                r1c2button.ImageList = redImages;
             }
 
             if (r1c3button.Text == "X" || r1c3button.Text == "O")
             {
-                r1c3button.ImageList = blueImages;
+                r1c3button.ImageList = redImages;
             }
 
             if (r2c1button.Text == "X" || r2c1button.Text == "O")
             {
-                r2c1button.ImageList = blueImages;
+                r2c1button.ImageList = redImages;
             }
 
             if (r2c2button.Text == "X" || r2c2button.Text == "O")
             {
-                r2c2button.ImageList = blueImages;
+                r2c2button.ImageList = redImages;
             }
 
             if (r2c3button.Text == "X" || r2c3button.Text == "O")
             {
-                r2c3button.ImageList = blueImages;
+                r2c3button.ImageList = redImages;
             }
 
             if (r3c1button.Text == "X" || r3c1button.Text == "O")
             {
-                r3c1button.ImageList = blueImages;
+                r3c1button.ImageList = redImages;
             }
 
             if (r3c2button.Text == "X" || r3c2button.Text == "O")
             {
-                r3c2button.ImageList = blueImages;
+                r3c2button.ImageList = redImages;
             }
 
             if (r3c3button.Text == "X" || r3c3button.Text == "O")
             {
-                r3c3button.ImageList = blueImages;
+                r3c3button.ImageList = redImages;
             }
         }
 
@@ -393,6 +396,15 @@ namespace TicTacToe
             r3c1button.Text = "";
             r3c2button.Text = "";
             r3c3button.Text = "";
+            r1c1button.ImageIndex = -1;
+            r1c2button.ImageIndex = -1;
+            r1c3button.ImageIndex = -1;
+            r2c1button.ImageIndex = -1;
+            r2c2button.ImageIndex = -1;
+            r2c3button.ImageIndex = -1;
+            r3c1button.ImageIndex = -1;
+            r3c2button.ImageIndex = -1;
+            r3c3button.ImageIndex = -1;
             selectToolStripMenuItem.Enabled = true;
         }
 
@@ -409,384 +421,404 @@ namespace TicTacToe
             r3c3button.Enabled = false;
         }
 
+        public void Stalemate()
+        {
+            if (r1c1button.Text != "" && r1c2button.Text != "" && r1c3button.Text != "" &&
+                r2c1button.Text != "" && r2c2button.Text != "" && r2c3button.Text != "" &&
+                r3c1button.Text != "" && r3c2button.Text != "" && r3c3button.Text != "")
+            {
+                MessageBox.Show("STALEMATE!");
+                GameOver();
+            }
+        }
+
         private void r1c1button_TextChanged(object sender, EventArgs e)
         {
+            Stalemate();
             // X WINS
             if (r1c1button.Text == "X" && r1c2button.Text == "X" && r1c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c1button.Text == "X" && r2c2button.Text == "X" && r3c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c1button.Text == "X" && r2c1button.Text == "X" && r3c1button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             // O WINS
             if (r1c1button.Text == "O" && r1c2button.Text == "O" && r1c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c1button.Text == "O" && r2c2button.Text == "O" && r3c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c1button.Text == "O" && r2c1button.Text == "O" && r3c1button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
         }
 
         private void r1c2button_TextChanged(object sender, EventArgs e)
         {
+            Stalemate();
             // X WINS
             if (r1c1button.Text == "X" && r1c2button.Text == "X" && r1c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c2button.Text == "X" && r2c2button.Text == "X" && r3c2button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             // O WINS
             if (r1c1button.Text == "O" && r1c2button.Text == "O" && r1c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c2button.Text == "O" && r2c2button.Text == "O" && r3c2button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
         }
 
         private void r1c3button_TextChanged(object sender, EventArgs e)
         {
+            Stalemate();
             // X WINS
             if (r1c1button.Text == "X" && r1c2button.Text == "X" && r1c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c3button.Text == "X" && r2c2button.Text == "X" && r3c1button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c3button.Text == "X" && r2c3button.Text == "X" && r3c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             // O WINS
             if (r1c1button.Text == "O" && r1c2button.Text == "O" && r1c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c3button.Text == "O" && r2c2button.Text == "O" && r3c1button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c3button.Text == "O" && r2c3button.Text == "O" && r3c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
         }
 
         private void r2c1button_TextChanged(object sender, EventArgs e)
         {
+            Stalemate();
             // X WINS
             if (r2c1button.Text == "X" && r2c2button.Text == "X" && r2c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c1button.Text == "X" && r2c1button.Text == "X" && r3c1button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             // O WINS
             if (r2c1button.Text == "O" && r2c2button.Text == "O" && r2c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c1button.Text == "O" && r2c1button.Text == "O" && r3c1button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
         }
 
         private void r2c2button_TextChanged(object sender, EventArgs e)
         {
+            Stalemate();
             // X WINS
             if (r1c1button.Text == "X" && r2c2button.Text == "X" && r3c2button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c2button.Text == "X" && r2c2button.Text == "X" && r3c2button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c3button.Text == "X" && r2c2button.Text == "X" && r3c1button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r2c1button.Text == "X" && r2c2button.Text == "X" && r2c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             // O WINS
             if (r1c1button.Text == "O" && r2c2button.Text == "O" && r3c2button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c2button.Text == "O" && r2c2button.Text == "O" && r3c2button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c3button.Text == "O" && r2c2button.Text == "O" && r3c1button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r2c1button.Text == "O" && r2c2button.Text == "O" && r2c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
         }
 
         private void r2c3button_TextChanged(object sender, EventArgs e)
         {
+            Stalemate();
             // X WINS
             if (r2c1button.Text == "X" && r2c2button.Text == "X" && r2c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c3button.Text == "X" && r2c3button.Text == "X" && r3c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             // O WINS
             if (r2c1button.Text == "O" && r2c2button.Text == "O" && r2c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c3button.Text == "O" && r2c3button.Text == "O" && r3c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
         }
 
         private void r3c1button_TextChanged(object sender, EventArgs e)
         {
+            Stalemate();
             // X WINS
             if (r3c1button.Text == "X" && r3c2button.Text == "X" && r3c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c1button.Text == "X" && r2c1button.Text == "X" && r3c1button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r3c1button.Text == "X" && r2c2button.Text == "X" && r1c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             // O WINS
             if (r3c1button.Text == "O" && r3c2button.Text == "O" && r3c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c1button.Text == "O" && r2c1button.Text == "O" && r3c1button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r3c1button.Text == "O" && r2c2button.Text == "O" && r1c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
         }
 
         private void r3c2button_TextChanged(object sender, EventArgs e)
         {
+            Stalemate();
             // X WINS
             if (r3c1button.Text == "X" && r3c2button.Text == "X" && r3c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c2button.Text == "X" && r2c2button.Text == "X" && r3c2button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             // O WINS
             if (r3c1button.Text == "O" && r3c2button.Text == "O" && r3c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c2button.Text == "O" && r2c2button.Text == "O" && r3c2button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
         }
 
         private void r3c3button_TextChanged(object sender, EventArgs e)
         {
+            Stalemate();
             // X WINS
             if (r3c1button.Text == "X" && r3c2button.Text == "X" && r3c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c1button.Text == "X" && r2c2button.Text == "X" && r3c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             if (r1c3button.Text == "X" && r2c3button.Text == "X" && r3c3button.Text == "X")
             {
+                GameOver();
                 if (player1.ToString() == "X") { MessageBox.Show("Player1 (X) Wins!!"); }
                 else { MessageBox.Show("Player2 (X) Wins!!"); }
-                GameOver();
             }
 
             // O WINS
             if (r3c1button.Text == "O" && r3c2button.Text == "O" && r3c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c1button.Text == "O" && r2c2button.Text == "O" && r3c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
 
             if (r1c3button.Text == "O" && r2c3button.Text == "O" && r3c3button.Text == "O")
             {
+                GameOver();
                 if (player1.ToString() == "O") { MessageBox.Show("Player1 (O) Wins!!"); }
                 else { MessageBox.Show("Player2 (O) Wins!!"); }
-                GameOver();
             }
         }
 
